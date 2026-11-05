@@ -5,10 +5,12 @@ export default function Courses() {
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-4xl font-bold text-gray-800 mb-8">
-          Featured Courses <span className="italic font-normal text-[#68A4D7]">- Apply Your Knowledge</span>
+        <h2 className="text-4xl font-bold text-gray-800 mb-2">
+          Featured Courses <span className="text-4xl font-italic text-gray-800 mb-2">- Apply Your Knowledge</span>
         </h2>
-
+        <p className="mb-8 text-xl font-medium text-[#68A4D7]">
+          Launching All Courses in Early 2027
+        </p>
         <div className="grid grid-cols-1 gap-y-16 gap-x-8 md:grid-cols-2 md:gap-x-12 md:gap-y-20">
           {courses.map((course, idx) => (
             <CourseCard
