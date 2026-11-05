@@ -5,19 +5,18 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import { usePathname } from 'next/navigation';
 import Link from "next/link";
 
-const loginLink = {
-  label: "Login",
-  href: "#",
-  submenu: [
-    { label: "Student Login", href: "/dashboard" },
-    { label: "Admin Login", href: "/admin/login" },
-  ],
-};
-
 const navLinks = [
   {
     label: "Home",
     href: "/",
+  },
+  {
+    label: "Login",
+    href: "#",
+    submenu: [
+      { label: "Student Login", href: "/dashboard" },
+      { label: "Admin Login", href: "/admin/login" },
+    ],
   },
   {
     label: "Application Procedures",
@@ -117,73 +116,38 @@ export default function Navbar() {
             {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
 
-          {/* Desktop Navigation */}
-          <div className="hidden min-w-0 flex-1 md:flex md:items-center md:justify-between ml-6 lg:ml-10">
-            {/* General links aligned to the left with medium spacing from logo */}
-            <ul className="flex flex-wrap items-center gap-x-4 lg:gap-x-6 text-sm font-medium lg:text-base">
-              {navLinks.map((item, index) => (
-                <li
-                  key={index}
-                  className="relative"
-                  onClick={() => setOpenMenu(openMenu === index ? null : index)}
-                >
-                  <Link
-                    href={item.href}
-                    className={`flex items-center gap-1 hover:text-blue-600 transition ${pathname === item.href ? "text-blue-600 font-semibold" : ""}`}
-                    onClick={(e) => {
-                      if (item.submenu) {
-                        e.preventDefault();
-                        setOpenMenu(openMenu === index ? null : index);
-                      } else {
-                        setMobileOpen(false);
-                        setOpenMenu(null);
-                      }
-                    }}
-                  >
-                    {item.label}
-                    {item.submenu && <ChevronDown className="w-4 h-4" />}
-                  </Link>
-
-                  {item.submenu && openMenu === index && (
-                    <ul className="absolute left-0 top-full z-50 mt-2 w-72 max-w-[calc(100vw-2rem)] rounded-lg border bg-white text-sm shadow-md">
-                      {item.submenu.map((sub, subIndex) => (
-                        <li key={subIndex}>
-                          <Link
-                            href={sub.href}
-                            className="block px-4 py-2 hover:bg-gray-100 text-gray-700"
-                          >
-                            {sub.label}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </li>
-              ))}
-            </ul>
-
-            {/* Login button pinned to the far right */}
-            <div className="relative shrink-0 pl-4" onClick={() => setOpenMenu(openMenu === 999 ? null : 999)}>
-              <button
-                type="button"
-                className="flex items-center gap-1 rounded-md bg-[#2E528E] px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-800 transition"
+          {/* Desktop Menu */}
+          <ul className="hidden min-w-0 flex-1 md:flex md:flex-wrap md:items-center md:justify-end md:gap-x-3 md:gap-y-2 lg:gap-x-4 text-sm font-medium lg:text-base">
+          {navLinks.map((item, index) => (
+            <li
+              key={index}
+              className="relative"
+              onClick={() => setOpenMenu(openMenu === index ? null : index)}
+            >
+              <Link
+                href={item.href}
+                className={`flex items-center gap-1 hover:text-blue-600 ${pathname === item.href ? "text-blue-600 font-semibold" : ""}`}
                 onClick={(e) => {
-                  e.stopPropagation();
-                  setOpenMenu(openMenu === 999 ? null : 999);
+                  if (item.submenu) {
+                    e.preventDefault();
+                    setOpenMenu(openMenu === index ? null : index);
+                  } else {
+                    setMobileOpen(false);
+                    setOpenMenu(null);
+                  }
                 }}
               >
-                {loginLink.label}
-                <ChevronDown className="w-4 h-4" />
-              </button>
+                {item.label}
+                {item.submenu && <ChevronDown className="w-4 h-4" />}
+              </Link>
 
-              {openMenu === 999 && (
-                <ul className="absolute right-0 top-full z-50 mt-2 w-48 rounded-lg border bg-white text-sm shadow-md py-1">
-                  {loginLink.submenu?.map((sub, subIndex) => (
+              {item.submenu && openMenu === index && (
+                <ul className="absolute left-0 top-full z-50 mt-2 w-72 max-w-[calc(100vw-2rem)] rounded-lg border bg-white text-sm shadow-md">
+                  {item.submenu.map((sub, subIndex) => (
                     <li key={subIndex}>
                       <Link
                         href={sub.href}
                         className="block px-4 py-2 hover:bg-gray-100 text-gray-700"
-                        onClick={() => setOpenMenu(null)}
                       >
                         {sub.label}
                       </Link>
@@ -191,14 +155,15 @@ export default function Navbar() {
                   ))}
                 </ul>
               )}
-            </div>
-          </div>
+            </li>
+          ))}
+          </ul>
         </div>
 
         {/* Mobile menu */}
         {mobileOpen ? (
           <ul className="border-t border-gray-100 pb-4 pt-3 text-base font-medium md:hidden">
-            {[...navLinks, loginLink].map((item, index) => (
+            {navLinks.map((item, index) => (
               <li key={index}>
                 <div
                   className="flex items-center justify-between"
