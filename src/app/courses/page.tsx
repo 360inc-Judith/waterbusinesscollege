@@ -70,6 +70,8 @@ export default function CoursesPage() {
                       ) : (
                         <a
                           href={course.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="inline-block text-center px-8 py-2 bg-white border border-blue-600 text-blue-600 text-sm rounded hover:bg-blue-700 hover:text-white transition"
                         >
                           PURCHASE
