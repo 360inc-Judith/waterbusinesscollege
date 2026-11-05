@@ -8,7 +8,7 @@ import QualificationStructure from "@/components/QualificationStructure";
 
 export default function Home() {
   return (
-    <main className="w-full overflow-x-hidden bg-white">
+    <main className="bg-gray-400 !important">
       <Hero />
       <Courses />
       <Qualifications />
