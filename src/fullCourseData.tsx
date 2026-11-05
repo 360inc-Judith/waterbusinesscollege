@@ -9,6 +9,7 @@ export type Course = {
   category: string;
   requiresStudentDiscountApplication?: boolean;
   requiresQualificationApplication?: boolean;
+  underReview?: boolean;
 };
 
 const PORTAL_BASE_URL = "https://portal.waterbusinesscollege.co.za";
@@ -70,6 +71,7 @@ export const fullCourses: Course[] = [
     price: "R500.00",
     link: buildPortalPurchaseLink(8719),
     category: "Foundational Courses",
+    underReview: true,
   },
   {
     title: "Introduction to Basic Mathematics – Student",
@@ -78,6 +80,7 @@ export const fullCourses: Course[] = [
     price: "R100.00",
     category: "Foundational Courses",
     requiresStudentDiscountApplication: true,
+    underReview: true,
   },
   {
     title: "Introduction to Algebra",
