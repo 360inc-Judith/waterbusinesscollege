@@ -401,9 +401,6 @@ const faqs = [
     answer: (
       <div className="px-6 py-4 bg-gray-50 text-gray-700 text-sm space-y-2">
         <p>
-          Water Business College (WBC) currently operates from an administrative office shared with an engineering company:
-          <br />
-          <strong>Office H4, The Willows Office Park, Die Wilgers, Pretoria</strong>.
         </p>
         <p>
           The Willows Park Office is mainly used for online classes. WBC employs a blended learning approach, combining online knowledge modules with in-person practical modules.
@@ -450,7 +447,6 @@ const faqs = [
           <li>Follow us on Facebook.</li>
         </ul>
         <p>
-          The Willows Park Office (Office H4, The Willows Office Park, Die Wilgers, Pretoria) is primarily used for online classes.
         </p>
         <p>
           WBC will expand its infrastructure based on demand for academic programmes across various regions.
