@@ -18,12 +18,10 @@ export default function FoundationIntroBasicMathematicsPage() {
       <div className="flex justify-center">
         <button
           type="button"
-          className="bg-[#2e528e] hover:bg-[#2e528e] text-white font-semibold px-6 py-3 rounded-lg shadow w-[400px]"
-          onClick={() => {
-            window.open('https://portal.waterbusinesscollege.co.za/?add-to-cart=8719&redirect_to=https://portal.waterbusinesscollege.co.za/cart-2/', '_blank');
-          }}
+          disabled
+          className="bg-gray-400 cursor-not-allowed text-white font-semibold px-6 py-3 rounded-lg shadow w-[400px]"
         >
-          Purchase course
+          Under Review
         </button>
       </div>
     </main>
