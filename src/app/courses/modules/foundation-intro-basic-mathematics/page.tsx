@@ -18,12 +18,10 @@ export default function FoundationIntroBasicMathematicsPage() {
       <div className="flex justify-center">
         <button
           type="button"
-          className="bg-[#2e528e] hover:bg-[#2e528e] text-white font-semibold px-6 py-3 rounded-lg shadow w-[400px]"
-          onClick={() => {
-            window.location.href = "/courses";
-          }}
+          disabled
+          className="bg-gray-400 text-white font-semibold px-6 py-3 rounded-lg shadow w-[400px] cursor-not-allowed"
         >
-          Purchase course
+          Under Review
         </button>
       </div>
     </main>
