@@ -13,7 +13,7 @@ export type Course = {
 };
 
 const PORTAL_BASE_URL = "https://portal.waterbusinesscollege.co.za";
-const PORTAL_CART_URL = `${PORTAL_BASE_URL}/cart-2/`;
+const PORTAL_CART_URL = `${PORTAL_BASE_URL}/cart/`;
 
 function buildPortalPurchaseLink(productId: number): string {
   return `${PORTAL_BASE_URL}/?add-to-cart=${productId}&redirect_to=${encodeURIComponent(
