@@ -12,7 +12,7 @@ export type Course = {
   underReview?: boolean;
 };
 
-const PORTAL_BASE_URL = "https://www.portal.waterbusinesscollege.co.za";
+const PORTAL_BASE_URL = "https://portal.waterbusinesscollege.co.za";
 const PORTAL_CART_URL = `${PORTAL_BASE_URL}/cart-2/`;
 
 function buildPortalPurchaseLink(productId: number): string {

@@ -39,8 +39,8 @@ const navLinks = [
     label: "My Account",
     href: "/my-account",
     submenu: [
-      { label: "Checkout", href: "https://waterbusinesscollege.co.za/checkout/" },
-      { label: "Cart", href: "https://waterbusinesscollege.co.za/cart-2/" },
+      { label: "Checkout", href: "https://portal.waterbusinesscollege.co.za/checkout/" },
+      { label: "Cart", href: "https://portal.waterbusinesscollege.co.za/cart-2/" },
     ],
   },
   {
